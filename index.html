@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Swing 123</title>
+    <title>Swing 1234</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./main.css">
     <style>
       .guess input[type=number] {
         font-size: 16px;
@@ -14,13 +15,15 @@
     </style>
   </head>
   <body>
-    <h1>Swing 123</h1>
-    <p>Number Baseball Game!</p>
+    <div class="top">
+      <h1>Swing 1234</h1>
+      <p>Number Baseball Game!</p>
 
     <form action="" class="guess">
-      <input type="number" name="numbers" min="0" max="9999">
-      <input type="submit" value="Guess">
+      <input class="blank" type="number" name="numbers" min="0" max="9999" placeholder="_ _ _ _">
+      <input class="btn btn-primary" type="submit" value="Guess">
     </form>
+    </div>
 
     <div class="score">
       <h2>Score</h2>
