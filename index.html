@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swing 123</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+      .guess input[type=number] {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Swing 123</h1>
+    <p>Number Baseball Game!</p>
+
+    <form action="" class="guess">
+      <input type="number" name="numbers" min="0" max="999">
+      <input type="submit" value="Guess">
+    </form>
+
+    <div class="score">
+      <h2>Score</h2>
+      <ul></ul>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      function shuffle(o){
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
+      }
+
+      function judge(answer, guess) {
+        var strikeCount = 0;
+        var ballCount = 0;
+        for(var i = 0 ; i < 3 ; i++){
+          for(var j = 0 ; j < 3 ; j++){
+            if(answer[i] == guess[j]){
+              if(i == j) strikeCount += 1;
+              else ballCount += 1;
+            } 
+          }
+        }
+        return strikeCount + 'S' + ballCount + 'B';
+      }
+
+      $(document).ready(function() {
+        var guessInput = $('.guess input[type=number]');
+        var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        shuffle(numbers);
+        var answer = numbers.slice(0, 3);
+
+        $('.guess').submit(function(e) {
+          e.preventDefault();
+        
+          var data = guessInput.val().substring(0,3);
+          var guess = [parseInt(data[0]), parseInt(data[1]), parseInt(data[2])];
+          var result = judge(answer, guess);
+          $('.score ul').append('<li>' + data + ' ' + result + '</li>');
+          guessInput.val('');
+        });
+      });
+    </script>
+  </body>
+</html>
