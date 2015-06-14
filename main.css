@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+  background-color: #eee;
+}
+
+.top {
+  background-color: white;
+  margin-top: -20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #bbb;
+}
+
+h1 {
+  font-size: 30px;
+  padding-top: 35px;
+}
+
+h2 {
+  font-size: 25px;
+  padding-bottom: 12px;
+}
+
+p {
+  color: #aaa;
+}
+
+form {
+  padding: 15px
+}
+
+.blank {
+  border: 1px solid #666;
+  width: 100px;
+  padding-left: 27px;
+}
+
+.btn {
+  padding: 4px 12px;
+  margin-top: -4px;
+  border: none;
+}
+
+ul {
+  list-style-position: inside;
+  margin-left: -46px;
+}
+
+.score {
+  color: #888;
+}
